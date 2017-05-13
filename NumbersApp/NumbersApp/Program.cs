@@ -19,7 +19,7 @@ namespace NumbersApp
 
             // or we can use static method
 
-            // Numbers.StartProgram();
+            Numbers.StartProgram();
         }
     }
 }
