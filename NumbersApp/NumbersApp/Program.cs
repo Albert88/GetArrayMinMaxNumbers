@@ -13,12 +13,6 @@ namespace NumbersApp
     {
         static void Main(string[] args)
         {
-            Numbers numbers = new Numbers();
-
-            numbers.Start();
-
-            // or we can use static method
-
             Numbers.StartProgram();
         }
     }

@@ -12,9 +12,9 @@ namespace NumbersApp
         private List<double> DoubleList { get; set; }
         private List<float> FloatList { get; set; }
 
-        private Tuple<int, int> minMaxInt;
-        private Tuple<float, float> minMaxFloat;
-        private Tuple<double, double> minMaxDouble;
+        private Tuple<int, int> IntMinMax;
+        private Tuple<float, float> FloatMinMax;
+        private Tuple<double, double> DoubleinMax;
 
         public Numbers()
         {
@@ -47,9 +47,9 @@ namespace NumbersApp
             this.DoubleList.Clear();
             this.FloatList.Clear();
 
-            minMaxInt = null;
-            minMaxFloat = null;
-            minMaxDouble = null;
+            IntMinMax = null;
+            FloatMinMax = null;
+            DoubleinMax = null;
 
         }
 
@@ -62,7 +62,7 @@ namespace NumbersApp
                 {
                     Console.Write(num + " ");
                 }
-                Console.WriteLine($"Min {this.minMaxInt.Item1}, Max {this.minMaxInt.Item2}");
+                Console.WriteLine($"Min {this.IntMinMax.Item1}, Max {this.IntMinMax.Item2}");
                 Console.WriteLine("_________________________________");
             }
             else
@@ -79,10 +79,10 @@ namespace NumbersApp
                     Console.Write(num + " ");
                 }
 
-                if (this.minMaxDouble != null)
+                if (this.DoubleinMax != null)
                 {
 
-                    Console.WriteLine($"Min {this.minMaxDouble.Item1}, Max {this.minMaxDouble.Item2}");
+                    Console.WriteLine($"Min {this.DoubleinMax.Item1}, Max {this.DoubleinMax.Item2}");
                     Console.WriteLine("_________________________________");
                 }
             }
@@ -101,7 +101,7 @@ namespace NumbersApp
                     Console.Write(num + " ");
                 }
 
-                Console.WriteLine($"Min {this.minMaxFloat.Item1}, Max {this.minMaxFloat.Item2}");
+                Console.WriteLine($"Min {this.FloatMinMax.Item1}, Max {this.FloatMinMax.Item2}");
                 Console.WriteLine("_________________________________");
             }
             else
@@ -115,9 +115,9 @@ namespace NumbersApp
 
         private void FindSmallestAndBiggestNumbersOfArrays()
         {
-            this.minMaxInt = GetIntMinMax();
-            this.minMaxDouble = GetDoubleMinMax();
-            this.minMaxFloat = GetFloatMinMax();
+            this.IntMinMax = GetIntMinMax();
+            this.DoubleinMax = GetDoubleMinMax();
+            this.FloatMinMax = GetFloatMinMax();
         }
 
         private void Get3Arrays()
@@ -165,6 +165,7 @@ namespace NumbersApp
                         maxNumber = this.IntList[i];
                     }
                 }
+
                 iTuple = new Tuple<int, int>(minNumber, maxNumber);
             }
             return iTuple;
@@ -223,8 +224,7 @@ namespace NumbersApp
 
             return fTuple;
         }
-
-        #region private methods
+        
         private void CreateArrays(string[] strNumbers)
         {
             int numInt;
@@ -280,7 +280,5 @@ namespace NumbersApp
             value = 0;
             return false;
         }
-        #endregion
-
     }
 }
